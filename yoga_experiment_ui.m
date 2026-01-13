@@ -264,22 +264,7 @@ function yoga_experiment_ui()
             tDisp    = t;
         end
     
-        % ECG FILTER (1–35 Hz)
-        try
-            [b,a] = butter(2,[1 35]/(fs/2),'bandpass');
-            ecgDisp = filtfilt(b,a,double(ecgDisp));
-        catch
-            ecgDisp = double(ecgDisp);
-        end
-    
-        % PZT FILTER (0.1–0.5 Hz)
-        try
-            [b2,a2] = butter(2,[0.1 0.5]/(fs/2),'bandpass');
-            respDisp = filtfilt(b2,a2,double(respDisp));
-        catch
-            respDisp = double(respDisp);
-        end
-    
+   
         % Plots
         cla(ecgAxes)
         plot(ecgAxes, tDisp, ecgDisp,'r','LineWidth',1)
