@@ -22,25 +22,24 @@ This repository contains the following elements :
   - Folder containing exmaples of raw, anonymized data files recorded using OpenSignals containg HRV and PZT recordings
   - MATLAB script for signal processing
 
-## Requirements
+---
+## 🏃🏻‍♀️ Running an Experiment
+### Requirements
 To successfully run the data acquisition scripts, make sure the following MATLAB toolboxes are installed :
 - I think only yhe one for the UI is required?
-- 
-The data exploration and preprocessing steps are thoroughly documented in the [Data_preparation.ipynb](https://github.com/toisonhugo/3DDFA_V2_TF/blob/main/notebooks/Data_preparation.ipynb) notebook. However, the two main steps required before training are summarized below:
+- install lsl for matlab following this tutorial
 
-1. Generate features files :
-   
-Run the cells that handle the concatenation of all feature files (e.g., landmarks, pose, identity parameters, etc.) into a unified format under the "Concaténation de toutes les features" section of the notebook 
-
-2. Generate training and evaluation .txt files:
-
-Run the cells located under the "Création des fichiers .txt" section of the notebook. These cells create the .txt files that define the training, validation, and test splits.
-
-Note : To prepare the data correctly, you only need to execute these steps once.
+### Steps
+1. Launch OpenSignals, make sure LSL is enabled in general settings
+2. Connect Bitalino to computer using bluetooth: connect PZT on A1, ECG on A4, sampling frequency of 1000Hz
+3. Start recording on Opensignals
+4. Run yoga_experiment_ui.m on matlab
+5. Once End Session has been clicked on, save .txt data file on OpenSignals
+6. Experiment complete !
 
 ---
 
-## 📊 Main results
+## 📊 Main Results
 
 <img width="1198" height="337" alt="image" src="https://github.com/user-attachments/assets/bfc963b2-baea-4951-b2ff-5e264f1b9bc9" />
 
